@@ -5,7 +5,7 @@ export const profile = {
   summary:
     "Information Technology student (B.S., May 2027) with hands-on experience in networking, system administration, web development, database design, and technical support. Skilled in building full-stack applications, troubleshooting technology issues, and supporting reliable IT solutions.",
   email: "ratishtimalsina66@gmail.com",
-  phone: "5733552475",
+  phone: "+1 573-355-2475",
   location: "Toledo, Ohio",
   github: "https://github.com/ratishtimalsina66",
   linkedin: "https://www.linkedin.com/in/ratish-timalsina-037633292",
@@ -34,6 +34,22 @@ export const skills = [
   { id: "17", name: "GitHub", category: "Database & Tools" },
   { id: "18", name: "Azure", category: "Database & Tools" },
   { id: "19", name: "VS Code", category: "Database & Tools" },
+    { id: "16", name: "SQL Server", category: "Database & Tools" },
+  { id: "17", name: "GitHub", category: "Database & Tools" },
+  { id: "18", name: "Azure", category: "Database & Tools" },
+  { id: "19", name: "VS Code", category: "Database & Tools" },
+
+  { id: "20", name: "Generative AI Tools", category: "AI & Emerging Technologies" },
+  { id: "21", name: "Prompt Engineering", category: "AI & Emerging Technologies" },
+  { id: "22", name: "AI-Assisted Development", category: "AI & Emerging Technologies" },
+  { id: "23", name: "Azure AI Services", category: "AI & Emerging Technologies" },
+  { id: "24", name: "Azure AI Search", category: "AI & Emerging Technologies" },
+  { id: "25", name: "Computer Vision / OCR", category: "AI & Emerging Technologies" },
+  { id: "26", name: "Speech AI Integration", category: "AI & Emerging Technologies" },
+  { id: "27", name: "KNIME Data Mining", category: "AI & Emerging Technologies" },
+  { id: "28", name: "K-Means Clustering", category: "AI & Emerging Technologies" },
+  { id: "29", name: "Principal Component Analysis (PCA)", category: "AI & Emerging Technologies" },
+];
 ];
 
 export const projects = [
