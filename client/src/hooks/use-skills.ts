@@ -1,13 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import { skills } from "@/data/portfolioData";
 
 export function useSkills() {
-  return useQuery({
-    queryKey: [api.skills.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.skills.list.path, { credentials: "include" });
-      if (!res.ok) throw new Error("Failed to fetch skills");
-      return api.skills.list.responses[200].parse(await res.json());
-    },
-  });
+  return {
+    data: skills,
+    isLoading: false,
+    error: null,
+  };
 }
