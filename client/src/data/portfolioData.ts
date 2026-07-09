@@ -4,8 +4,8 @@ export const profile = {
   title: "Information Technology Student & Full-Stack Developer",
   summary:
     "Information Technology student (B.S., May 2027) with hands-on experience in networking, system administration, web development, database design, and technical support. Skilled in building full-stack applications, troubleshooting technology issues, and supporting reliable IT solutions.",
-  email: "",
-  phone: "",
+  email: "ratishtimalsina66@gmail.com",
+  phone: "5733552475",
   location: "Toledo, Ohio",
   github: "https://github.com/ratishtimalsina66",
   linkedin: "https://www.linkedin.com/in/ratish-timalsina-037633292",
