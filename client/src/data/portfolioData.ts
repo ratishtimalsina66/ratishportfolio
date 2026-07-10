@@ -92,6 +92,16 @@ export const projects = [
     imageUrl: "/ratishportfolio/projects/medrx-pharmacy-prescriptions.png",
     technologies: ["SQL", "Database Design", "ERD"],
   },
+  {
+  id: "6",
+  title: "RubricGuardian — AI Assignment Compliance Checker",
+  description:
+    "AI-powered tool that checks student assignments against rubric requirements. Multi-service architecture with an ASP.NET Core MVC front end, a Python FastAPI analysis service, SQL Server storage, and LLM API integration for automated compliance feedback.",
+  imageUrl: "/ratishportfolio/projects/RubricGuardian.png",
+  tags: ["ASP.NET Core", "Python", "FastAPI", "SQL Server", "LLM API"],
+  repoUrl: "https://github.com/ratishtimalsina66/RubricGuardian",
+  projectUrl: "",
+},
 ];
 
 export const experience = [
