@@ -121,7 +121,8 @@ export default function Home() {
                     </a>
 
                     <a
-                      href="/ratishportfolio/resume.pdf"
+                      href="/ratishportfolio/Resume.pdf"
+                      download="Ratish_Timalsina_Resume.pdf"
                       className="px-8 py-4 rounded-full border border-border font-semibold hover:bg-secondary transition-colors w-full sm:w-auto"
                     >
                       Download Resume

@@ -50,7 +50,6 @@ export const skills = [
   { id: "28", name: "K-Means Clustering", category: "AI & Emerging Technologies" },
   { id: "29", name: "Principal Component Analysis (PCA)", category: "AI & Emerging Technologies" },
 ];
-];
 
 export const projects = [
   {
