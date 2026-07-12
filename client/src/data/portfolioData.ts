@@ -70,7 +70,7 @@ export const projects = [
     imageUrl: "/ratishportfolio/projects/timalsina-masala.png",
     technologies: ["HTML", "CSS", "JavaScript"],
     repoUrl: "https://github.com/ratishtimalsina66/timalsina-masala-pasal",
-  projectUrl: "timalsina-masala-pasal-fmdzhpcpaugnb5e2.eastus-01.azurewebsites.net",
+  projectUrl: "https://timalsina-masala-pasal-fmdzhpcpaugnb5e2.eastus-01.azurewebsites.net",
   },
   {
     id: "3",
