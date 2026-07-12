@@ -41,9 +41,16 @@ export function Navigation() {
         )}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold font-display tracking-tight hover:opacity-80 transition-opacity">
-            {scrolled ? "RT." : "Ratish Timalsina"}
-          </a>
+          <a href="#" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+  <img
+    src="/ratishportfolio/projects/profile.png"
+    alt="Ratish Timalsina"
+    className="w-9 h-9 rounded-full object-cover border border-primary/50 shrink-0"
+  />
+  <span className="text-2xl font-bold font-display tracking-tight">
+    {scrolled ? "RT." : "Ratish Timalsina"}
+  </span>
+</a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">

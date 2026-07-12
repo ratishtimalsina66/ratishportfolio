@@ -1,81 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Modern Neutral Palette with Indigo Accent */
-  --background: 0 0% 100%; /* White */
-  --foreground: 222 47% 11%; /* Dark Blue/Gray */
-  
-  --primary: 240 5.9% 10%; /* Almost Black */
-  --primary-foreground: 0 0% 98%; /* White */
-  
-  --secondary: 240 4.8% 95.9%; /* Light Gray */
-  --secondary-foreground: 240 5.9% 10%;
-  
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  
-  --accent: 250 100% 65%; /* Vibrant Indigo Accent */
-  --accent-foreground: 0 0% 100%;
-  
-  --destructive: 0 84.2% 60.2%;
+  /* Midnight Ink + Saffron — dark developer theme */
+  --background: 224 45% 5%;        /* Deep ink navy-black */
+  --foreground: 214 30% 91%;       /* Soft off-white */
+
+  --card: 223 40% 8%;              /* Elevated surface */
+  --card-foreground: 214 30% 91%;
+  --card-border: 222 26% 16%;
+
+  --popover: 223 40% 9%;
+  --popover-foreground: 214 30% 91%;
+  --popover-border: 222 26% 16%;
+
+  --primary: 36 96% 55%;           /* Saffron */
+  --primary-foreground: 26 45% 8%; /* Near-black warm */
+
+  --secondary: 222 32% 12%;        /* Chips, subtle fills */
+  --secondary-foreground: 214 25% 88%;
+
+  --muted: 222 28% 13%;
+  --muted-foreground: 217 14% 63%;
+
+  --accent: 32 97% 60%;            /* Warm amber highlight */
+  --accent-foreground: 26 45% 8%;
+
+  --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
-  
+  --border: 222 26% 16%;
+  --input: 222 26% 18%;
+  --ring: 36 96% 55%;
+
   --radius: 0.75rem;
-  
+
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* Kept identical to :root so any .dark toggle changes nothing */
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  
-  --accent: 250 100% 70%;
-  --accent-foreground: 0 0% 98%;
-  
-  --destructive: 0 62.8% 30.6%;
+  --background: 224 45% 5%;
+  --foreground: 214 30% 91%;
+  --card: 223 40% 8%;
+  --card-foreground: 214 30% 91%;
+  --card-border: 222 26% 16%;
+  --popover: 223 40% 9%;
+  --popover-foreground: 214 30% 91%;
+  --popover-border: 222 26% 16%;
+  --primary: 36 96% 55%;
+  --primary-foreground: 26 45% 8%;
+  --secondary: 222 32% 12%;
+  --secondary-foreground: 214 25% 88%;
+  --muted: 222 28% 13%;
+  --muted-foreground: 217 14% 63%;
+  --accent: 32 97% 60%;
+  --accent-foreground: 26 45% 8%;
+  --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
-  
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
+  --border: 222 26% 16%;
+  --input: 222 26% 18%;
+  --ring: 36 96% 55%;
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
     font-family: var(--font-sans);
+    /* Faint dot grid + warm glow from the top — ambient, not loud */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(36 96% 55% / 0.08), transparent),
+      radial-gradient(hsl(214 30% 91% / 0.035) 1px, transparent 1px);
+    background-size: 100% 100%, 28px 28px;
+    background-attachment: fixed;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     @apply tracking-tight;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--secondary));
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/60;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-primary;
   }
-  
+
   .glass-card {
-    @apply bg-background/60 backdrop-blur-xl border border-white/20 shadow-lg;
+    @apply bg-card/60 backdrop-blur-xl border border-white/10 shadow-lg;
   }
 }

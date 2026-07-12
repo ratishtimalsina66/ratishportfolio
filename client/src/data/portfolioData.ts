@@ -59,6 +59,8 @@ export const projects = [
       "Full-stack ASP.NET MVC and SQL Server application for managing members, memberships, classes, registrations, facilities, equipment, and reporting.",
     imageUrl: "/ratishportfolio/projects/rec-center.png",
     technologies: ["ASP.NET MVC", "C#", "SQL Server", "CSS"],
+    repoUrl: "",
+  projectUrl: "",
   },
   {
     id: "2",
@@ -67,6 +69,8 @@ export const projects = [
       "Responsive spice store website featuring product displays, modern navigation, and a clean customer-focused interface.",
     imageUrl: "/ratishportfolio/projects/timalsina-masala.png",
     technologies: ["HTML", "CSS", "JavaScript"],
+    repoUrl: "https://github.com/ratishtimalsina66/Timalsinamasala2",
+  projectUrl: "https://ratishtimalsina66.github.io/Timalsinamasala2/",
   },
   {
     id: "3",
@@ -75,6 +79,8 @@ export const projects = [
       "Modern salon website with responsive design, service presentation, and polished visual styling.",
     imageUrl: "/ratishportfolio/projects/divine-brows.png",
     technologies: ["HTML", "CSS", "JavaScript"],
+    repoUrl: "",
+  projectUrl: "",
   },
   {
     id: "4",
@@ -83,6 +89,8 @@ export const projects = [
       "Web application project focused on structured content, responsive interfaces, and practical frontend development.",
     imageUrl: "/ratishportfolio/projects/field-journal.png",
     technologies: ["React", "TypeScript", "CSS"],
+    repoUrl: "",
+  projectUrl: "",
   },
   {
     id: "5",
@@ -91,6 +99,8 @@ export const projects = [
       "Database design project modeling doctors, patients, pharmacies, prescriptions, and medication pickup workflows.",
     imageUrl: "/ratishportfolio/projects/medrx-pharmacy-prescriptions.png",
     technologies: ["SQL", "Database Design", "ERD"],
+    repoUrl: "",
+  projectUrl: "",
   },
   {
   id: "6",

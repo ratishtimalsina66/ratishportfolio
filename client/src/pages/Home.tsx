@@ -74,6 +74,11 @@ export default function Home() {
             >
               {!profileLoading && (
                 <>
+                <img
+  src="/ratishportfolio/projects/profile.png"
+  alt="Ratish Timalsina"
+  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto mb-8 border-2 border-primary/50 shadow-[0_0_50px_-12px_hsl(var(--primary)/0.55)]"
+/>
                   <p className="inline-flex items-center justify-center gap-2 text-sm md:text-base px-4 py-2 rounded-full bg-secondary/60 border border-border/50 text-muted-foreground mb-6">
                     <span className="w-2 h-2 rounded-full bg-primary" />
                     Available for Help Desk / IT Support roles
