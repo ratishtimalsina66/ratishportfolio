@@ -69,8 +69,8 @@ export const projects = [
       "Responsive spice store website featuring product displays, modern navigation, and a clean customer-focused interface.",
     imageUrl: "/ratishportfolio/projects/timalsina-masala.png",
     technologies: ["HTML", "CSS", "JavaScript"],
-    repoUrl: "https://github.com/ratishtimalsina66/Timalsinamasala2",
-  projectUrl: "https://ratishtimalsina66.github.io/Timalsinamasala2/",
+    repoUrl: "https://github.com/ratishtimalsina66/timalsina-masala-pasal",
+  projectUrl: "timalsina-masala-pasal-fmdzhpcpaugnb5e2.eastus-01.azurewebsites.net",
   },
   {
     id: "3",
