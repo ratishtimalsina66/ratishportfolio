@@ -90,7 +90,7 @@ export const projects = [
     imageUrl: "/ratishportfolio/projects/field-journal.png",
     technologies: ["React", "TypeScript", "CSS"],
     repoUrl: "https://github.com/ratishtimalsina66/field-journal",
-  projectUrl: "https://ratishtimalsina66.github.io/field-journal/",
+  projectUrl: "https://ratishtimalsina66.github.io/field-journal",
   },
   {
     id: "5",
