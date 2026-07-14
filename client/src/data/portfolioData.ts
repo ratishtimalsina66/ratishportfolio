@@ -34,21 +34,57 @@ export const skills = [
   { id: "17", name: "GitHub", category: "Database & Tools" },
   { id: "18", name: "Azure", category: "Database & Tools" },
   { id: "19", name: "VS Code", category: "Database & Tools" },
-    { id: "16", name: "SQL Server", category: "Database & Tools" },
-  { id: "17", name: "GitHub", category: "Database & Tools" },
-  { id: "18", name: "Azure", category: "Database & Tools" },
-  { id: "19", name: "VS Code", category: "Database & Tools" },
 
-  { id: "20", name: "Generative AI Tools", category: "AI & Emerging Technologies" },
-  { id: "21", name: "Prompt Engineering", category: "AI & Emerging Technologies" },
-  { id: "22", name: "AI-Assisted Development", category: "AI & Emerging Technologies" },
-  { id: "23", name: "Azure AI Services", category: "AI & Emerging Technologies" },
-  { id: "24", name: "Azure AI Search", category: "AI & Emerging Technologies" },
-  { id: "25", name: "Computer Vision / OCR", category: "AI & Emerging Technologies" },
-  { id: "26", name: "Speech AI Integration", category: "AI & Emerging Technologies" },
-  { id: "27", name: "KNIME Data Mining", category: "AI & Emerging Technologies" },
-  { id: "28", name: "K-Means Clustering", category: "AI & Emerging Technologies" },
-  { id: "29", name: "Principal Component Analysis (PCA)", category: "AI & Emerging Technologies" },
+  {
+    id: "20",
+    name: "Generative AI Tools",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "21",
+    name: "Prompt Engineering",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "22",
+    name: "AI-Assisted Development",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "23",
+    name: "Azure AI Services",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "24",
+    name: "Azure AI Search",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "25",
+    name: "Computer Vision / OCR",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "26",
+    name: "Speech AI Integration",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "27",
+    name: "KNIME Data Mining",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "28",
+    name: "K-Means Clustering",
+    category: "AI & Emerging Technologies",
+  },
+  {
+    id: "29",
+    name: "Principal Component Analysis (PCA)",
+    category: "AI & Emerging Technologies",
+  },
 ];
 
 export const projects = [
@@ -58,9 +94,9 @@ export const projects = [
     description:
       "Full-stack ASP.NET MVC and SQL Server application for managing members, memberships, classes, registrations, facilities, equipment, and reporting.",
     imageUrl: "/ratishportfolio/projects/rec-center.png",
-    technologies: ["ASP.NET MVC", "C#", "SQL Server", "CSS"],
+    tags: ["ASP.NET MVC", "C#", "SQL Server", "CSS"],
     repoUrl: "",
-  projectUrl: "",
+    projectUrl: "",
   },
   {
     id: "2",
@@ -68,9 +104,11 @@ export const projects = [
     description:
       "Responsive spice store website featuring product displays, modern navigation, and a clean customer-focused interface.",
     imageUrl: "/ratishportfolio/projects/timalsina-masala.png",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    repoUrl: "https://github.com/ratishtimalsina66/timalsina-masala-pasal",
-  projectUrl: "https://timalsina-masala-pasal-fmdzhpcpaugnb5e2.eastus-01.azurewebsites.net",
+    tags: ["HTML", "CSS", "JavaScript"],
+    repoUrl:
+      "https://github.com/ratishtimalsina66/timalsina-masala-pasal",
+    projectUrl:
+      "https://timalsina-masala-pasal-fmdzhpcpaugnb5e2.eastus-01.azurewebsites.net",
   },
   {
     id: "3",
@@ -78,9 +116,9 @@ export const projects = [
     description:
       "Modern salon website with responsive design, service presentation, and polished visual styling.",
     imageUrl: "/ratishportfolio/projects/divine-brows.png",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript"],
     repoUrl: "",
-  projectUrl: "",
+    projectUrl: "",
   },
   {
     id: "4",
@@ -88,30 +126,37 @@ export const projects = [
     description:
       "Web application project focused on structured content, responsive interfaces, and practical frontend development.",
     imageUrl: "/ratishportfolio/projects/field-journal.png",
-    technologies: ["React", "TypeScript", "CSS"],
+    tags: ["React", "TypeScript", "CSS"],
     repoUrl: "https://github.com/ratishtimalsina66/field-journal",
-  projectUrl: "https://ratishtimalsina66.github.io/field-journal",
+    projectUrl: "https://ratishtimalsina66.github.io/field-journal",
   },
   {
     id: "5",
     title: "Pharmacy Prescription System",
     description:
       "Database design project modeling doctors, patients, pharmacies, prescriptions, and medication pickup workflows.",
-    imageUrl: "/ratishportfolio/projects/medrx-pharmacy-prescriptions.png",
-    technologies: ["SQL", "Database Design", "ERD"],
+    imageUrl:
+      "/ratishportfolio/projects/medrx-pharmacy-prescriptions.png",
+    tags: ["SQL", "Database Design", "ERD"],
     repoUrl: "",
-  projectUrl: "",
+    projectUrl: "",
   },
   {
-  id: "6",
-  title: "RubricGuardian — AI Assignment Compliance Checker",
-  description:
-    "AI-powered tool that checks student assignments against rubric requirements. Multi-service architecture with an ASP.NET Core MVC front end, a Python FastAPI analysis service, SQL Server storage, and LLM API integration for automated compliance feedback.",
-  imageUrl: "/ratishportfolio/projects/RubricGuardian.png",
-  tags: ["ASP.NET Core", "Python", "FastAPI", "SQL Server", "LLM API"],
-  repoUrl: "https://github.com/ratishtimalsina66/RubricGuardian",
-  projectUrl: "",
-},
+    id: "6",
+    title: "RubricGuardian — AI Assignment Compliance Checker",
+    description:
+      "AI-powered tool that checks student assignments against rubric requirements. Multi-service architecture with an ASP.NET Core MVC front end, a Python FastAPI analysis service, SQL Server storage, and LLM API integration for automated compliance feedback.",
+    imageUrl: "/ratishportfolio/projects/RubricGuardian.png",
+    tags: [
+      "ASP.NET Core",
+      "Python",
+      "FastAPI",
+      "SQL Server",
+      "LLM API",
+    ],
+    repoUrl: "https://github.com/ratishtimalsina66/RubricGuardian",
+    projectUrl: "",
+  },
 ];
 
 export const experience = [
