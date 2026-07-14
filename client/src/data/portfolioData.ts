@@ -89,8 +89,8 @@ export const projects = [
       "Web application project focused on structured content, responsive interfaces, and practical frontend development.",
     imageUrl: "/ratishportfolio/projects/field-journal.png",
     technologies: ["React", "TypeScript", "CSS"],
-    repoUrl: "",
-  projectUrl: "",
+    repoUrl: "https://github.com/ratishtimalsina66/field-journal",
+  projectUrl: "https://ratishtimalsina66.github.io/field-journal/",
   },
   {
     id: "5",
