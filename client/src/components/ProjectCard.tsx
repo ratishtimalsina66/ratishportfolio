@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, FileText } from "lucide-react";
+import { Link } from "wouter";
 
 interface Project {
   id: string;
+  slug?: string;
   title: string;
   description: string;
   imageUrl?: string;
@@ -17,6 +19,8 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const detailHref = project.slug ? `/projects/${project.slug}` : undefined;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -37,12 +41,21 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <div className="flex flex-col flex-1 p-6 md:p-8">
-        <div className="flex items-start justify-between mb-4">
-          <h3 className="text-2xl font-bold tracking-tight">
-            {project.title}
-          </h3>
+        <div className="flex items-start justify-between mb-4 gap-3">
+          {detailHref ? (
+            <Link
+              href={detailHref}
+              className="text-2xl font-bold tracking-tight hover:text-primary transition-colors"
+            >
+              {project.title}
+            </Link>
+          ) : (
+            <h3 className="text-2xl font-bold tracking-tight">
+              {project.title}
+            </h3>
+          )}
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 shrink-0">
             {project.projectUrl && (
               <a
                 href={project.projectUrl}
@@ -66,6 +79,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 <Github className="w-4 h-4" />
               </a>
             )}
+
+            {detailHref && (
+              <Link
+                href={detailHref}
+                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label={`View ${project.title} details`}
+              >
+                <FileText className="w-4 h-4" />
+              </Link>
+            )}
           </div>
         </div>
 
@@ -73,18 +96,30 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.description}
         </p>
 
-        {project.tags && (
-          <div className="mt-auto flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/50 border border-border/50"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        <div className="mt-auto flex flex-col gap-4">
+          {project.tags && (
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/50 border border-border/50"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {detailHref && (
+            <Link
+              href={detailHref}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline w-fit"
+            >
+              View project details
+              <ExternalLink className="w-3.5 h-3.5" />
+            </Link>
+          )}
+        </div>
       </div>
     </motion.div>
   );

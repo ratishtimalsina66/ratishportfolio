@@ -1,6 +1,6 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { rm, readFile, copyFile } from "fs/promises";
 
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
@@ -37,6 +37,12 @@ async function buildAll() {
 
   console.log("building client...");
   await viteBuild();
+
+  // GitHub Pages has no server-side routing, so a direct hit or refresh on
+  // a client-side route (e.g. /ratishportfolio/projects/rec-center) 404s.
+  // Serving a copy of index.html as 404.html lets the SPA boot and wouter
+  // pick up the requested path from the URL.
+  await copyFile("dist/public/index.html", "dist/public/404.html");
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
