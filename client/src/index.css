@@ -5,7 +5,51 @@
 @tailwind utilities;
 
 :root {
-  /* Midnight Ink + Saffron — dark developer theme */
+  /* Warm Parchment + Saffron — light theme, matched to the dark palette below */
+  --background: 36 35% 97%;        /* Warm off-white, not pure white */
+  --foreground: 224 35% 14%;       /* Dark slate navy text */
+
+  --card: 36 30% 99%;              /* Near-white elevated surface */
+  --card-foreground: 224 35% 14%;
+  --card-border: 32 20% 89%;
+
+  --popover: 36 30% 99%;
+  --popover-foreground: 224 35% 14%;
+  --popover-border: 32 20% 89%;
+
+  /* Saffron darkened for AA text/link contrast on light backgrounds (~5:1) */
+  --primary: 36 90% 30%;
+  --primary-foreground: 26 45% 8%; /* Near-black warm, pairs with --primary-strong */
+  --primary-strong: 36 96% 55%;    /* Full-bright saffron, reserved for filled buttons */
+
+  --secondary: 32 25% 93%;         /* Chips, subtle fills */
+  --secondary-foreground: 222 30% 20%;
+
+  --muted: 32 20% 94%;
+  --muted-foreground: 220 10% 40%;
+
+  --accent: 32 90% 30%;            /* Darkened warm amber highlight, AA-safe as text */
+  --accent-foreground: 26 45% 8%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 32 20% 88%;
+  --input: 32 20% 85%;
+  --ring: 36 90% 30%;
+
+  --grid-glow-opacity: 0.06;
+  --grid-dot-opacity: 0.05;
+
+  --radius: 0.75rem;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Midnight Ink + Saffron — dark developer theme, unchanged from the original look */
+.dark {
   --background: 224 45% 5%;        /* Deep ink navy-black */
   --foreground: 214 30% 91%;       /* Soft off-white */
 
@@ -19,6 +63,7 @@
 
   --primary: 36 96% 55%;           /* Saffron */
   --primary-foreground: 26 45% 8%; /* Near-black warm */
+  --primary-strong: 36 96% 55%;    /* Same as --primary in dark — no split needed here */
 
   --secondary: 222 32% 12%;        /* Chips, subtle fills */
   --secondary-foreground: 214 25% 88%;
@@ -36,46 +81,22 @@
   --input: 222 26% 18%;
   --ring: 36 96% 55%;
 
-  --radius: 0.75rem;
-
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-
-/* Kept identical to :root so any .dark toggle changes nothing */
-.dark {
-  --background: 224 45% 5%;
-  --foreground: 214 30% 91%;
-  --card: 223 40% 8%;
-  --card-foreground: 214 30% 91%;
-  --card-border: 222 26% 16%;
-  --popover: 223 40% 9%;
-  --popover-foreground: 214 30% 91%;
-  --popover-border: 222 26% 16%;
-  --primary: 36 96% 55%;
-  --primary-foreground: 26 45% 8%;
-  --secondary: 222 32% 12%;
-  --secondary-foreground: 214 25% 88%;
-  --muted: 222 28% 13%;
-  --muted-foreground: 217 14% 63%;
-  --accent: 32 97% 60%;
-  --accent-foreground: 26 45% 8%;
-  --destructive: 0 72% 51%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 222 26% 16%;
-  --input: 222 26% 18%;
-  --ring: 36 96% 55%;
+  --grid-glow-opacity: 0.08;
+  --grid-dot-opacity: 0.035;
 }
 
 @layer base {
+  * {
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+    @apply bg-background text-foreground antialiased selection:bg-primary-strong selection:text-primary-foreground;
     font-family: var(--font-sans);
     /* Faint dot grid + warm glow from the top — ambient, not loud */
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(36 96% 55% / 0.08), transparent),
-      radial-gradient(hsl(214 30% 91% / 0.035) 1px, transparent 1px);
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary-strong) / var(--grid-glow-opacity)), transparent),
+      radial-gradient(hsl(var(--foreground) / var(--grid-dot-opacity)) 1px, transparent 1px);
     background-size: 100% 100%, 28px 28px;
     background-attachment: fixed;
   }
@@ -106,6 +127,6 @@
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-white/10 shadow-lg;
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 shadow-lg;
   }
 }

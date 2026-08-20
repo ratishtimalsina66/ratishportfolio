@@ -28,6 +28,7 @@ export default {
         },
         primary: {
           DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          strong: "hsl(var(--primary-strong) / <alpha-value>)",
           foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
           border: "var(--primary-border)",
         },

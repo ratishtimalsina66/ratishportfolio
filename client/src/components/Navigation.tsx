@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { href: "#experience", label: "Experience" },
@@ -67,19 +68,23 @@ export function Navigation() {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "#contact")}
-              className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="px-5 py-2.5 rounded-full bg-primary-strong text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
             >
               Get in Touch
             </a>
+            <ThemeToggle />
           </nav>
 
           {/* Mobile Toggle */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="md:hidden p-2 text-foreground"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="flex items-center gap-1 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(true)}
+              className="p-2 text-foreground"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </motion.header>
 

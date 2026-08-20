@@ -96,8 +96,6 @@ export const projects = [
       "Full-stack ASP.NET MVC and SQL Server application for managing members, memberships, classes, registrations, facilities, equipment, and reporting.",
     imageUrl: "/ratishportfolio/projects/rec-center.png",
     tags: ["ASP.NET MVC", "C#", "SQL Server", "CSS"],
-    repoUrl: "",
-    projectUrl: "",
     highlights: [
       "Member records, memberships, and class registrations backed by a normalized SQL Server schema",
       "Facility and equipment tracking to support day-to-day recreation center operations",
@@ -135,8 +133,6 @@ export const projects = [
       "Modern salon website with responsive design, service presentation, and polished visual styling.",
     imageUrl: "/ratishportfolio/projects/divine-brows.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    repoUrl: "",
-    projectUrl: "",
     highlights: [
       "Service menu and pricing presentation for a beauty studio",
       "Responsive, mobile-first layout with polished visual styling",
@@ -172,8 +168,6 @@ export const projects = [
     imageUrl:
       "/ratishportfolio/projects/medrx-pharmacy-prescriptions.png",
     tags: ["SQL", "Database Design", "ERD"],
-    repoUrl: "",
-    projectUrl: "",
     highlights: [
       "Entity-relationship modeling for doctors, patients, pharmacies, and prescriptions",
       "Normalized relational schema designed to avoid data redundancy and anomalies",

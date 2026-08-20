@@ -61,7 +61,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 href={project.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="p-2 rounded-full bg-secondary hover:bg-primary-strong hover:text-primary-foreground transition-colors"
                 aria-label={`View ${project.title} live`}
               >
                 <ExternalLink className="w-4 h-4" />
@@ -73,7 +73,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="p-2 rounded-full bg-secondary hover:bg-primary-strong hover:text-primary-foreground transition-colors"
                 aria-label={`View ${project.title} source code`}
               >
                 <Github className="w-4 h-4" />
@@ -83,7 +83,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             {detailHref && (
               <Link
                 href={detailHref}
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="p-2 rounded-full bg-secondary hover:bg-primary-strong hover:text-primary-foreground transition-colors"
                 aria-label={`View ${project.title} details`}
               >
                 <FileText className="w-4 h-4" />

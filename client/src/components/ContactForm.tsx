@@ -1,14 +1,22 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Send } from "lucide-react";
-import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useContact } from "@/hooks/use-contact";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
+const contactFormSchema = z.object({
+  name: z.string().trim().min(1, "Name is required"),
+  email: z.string().trim().email("Enter a valid email address"),
+  message: z.string().trim().min(1, "Message is required"),
+});
+
+type ContactFormValues = z.infer<typeof contactFormSchema>;
+
 export function ContactForm() {
-  const mutation = useContact();
-  const form = useForm<InsertMessage>({
-    resolver: zodResolver(insertMessageSchema),
+  const { toast } = useToast();
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -16,11 +24,45 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = (data: InsertMessage) => {
-    mutation.mutate(data, {
-      onSuccess: () => form.reset(),
-    });
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          subject: `Portfolio contact from ${data.name}`,
+          botcheck: "",
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!result.success) {
+        throw new Error(result.message || "Failed to send message");
+      }
+
+      toast({
+        title: "Message Sent",
+        description: "Thanks for reaching out! I'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message",
+        variant: "destructive",
+      });
+    }
   };
+
+  const isSending = form.formState.isSubmitting;
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -81,10 +123,10 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={mutation.isPending}
-        className="w-full md:w-auto px-8 py-4 rounded-xl font-semibold bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
+        disabled={isSending}
+        className="w-full md:w-auto px-8 py-4 rounded-xl font-semibold bg-primary-strong text-primary-foreground shadow-lg shadow-primary-strong/20 hover:shadow-xl hover:shadow-primary-strong/30 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center gap-2"
       >
-        {mutation.isPending ? (
+        {isSending ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
             Sending...

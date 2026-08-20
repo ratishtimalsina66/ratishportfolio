@@ -80,7 +80,7 @@ export default function ProjectDetail() {
                 href={project.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-strong text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 <ExternalLink className="w-4 h-4" />
                 View Live Project
@@ -96,6 +96,7 @@ export default function ProjectDetail() {
               >
                 <Github className="w-4 h-4" />
                 View Source Code
+                <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />
               </a>
             )}
           </div>

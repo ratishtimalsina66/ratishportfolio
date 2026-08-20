@@ -10,6 +10,7 @@ import {
   Briefcase,
   GraduationCap,
   FolderGit2,
+  ExternalLink,
 } from "lucide-react";
 
 import { Navigation } from "@/components/Navigation";
@@ -61,7 +62,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-primary-strong/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
         </div>
 
@@ -77,7 +78,7 @@ export default function Home() {
                 <img
   src="/ratishportfolio/projects/profile.png"
   alt="Ratish Timalsina"
-  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto mb-8 border-2 border-primary/50 shadow-[0_0_50px_-12px_hsl(var(--primary)/0.55)]"
+  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto mb-8 border-2 border-primary/50 shadow-[0_0_50px_-12px_hsl(var(--primary-strong)/0.55)]"
 />
                   <p className="inline-flex items-center justify-center gap-2 text-sm md:text-base px-4 py-2 rounded-full bg-secondary/60 border border-border/50 text-muted-foreground mb-6">
                     <span className="w-2 h-2 rounded-full bg-primary" />
@@ -113,7 +114,7 @@ export default function Home() {
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href="#projects"
-                      className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto"
+                      className="px-8 py-4 rounded-full bg-primary-strong text-primary-foreground font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto"
                     >
                       View My Projects
                     </a>
@@ -359,11 +360,12 @@ export default function Home() {
                     <a
                       href={normalizeUrl(profile.github)}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors border border-border/40"
                     >
                       <Github className="w-5 h-5" />
                       <span className="text-sm font-semibold">GitHub</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />
                     </a>
                   )}
 
@@ -371,11 +373,12 @@ export default function Home() {
                     <a
                       href={normalizeUrl(profile.linkedin)}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors border border-border/40"
                     >
                       <Linkedin className="w-5 h-5" />
                       <span className="text-sm font-semibold">LinkedIn</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />
                     </a>
                   )}
                 </div>
