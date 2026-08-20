@@ -64,7 +64,6 @@ async function seedDatabase() {
       title: "Information Technology Student & Full-Stack Developer",
       summary: "Information Technology student (B.S., May 2027) with hands-on experience in networking, system administration, web development, database design, and technical support. Skilled in building full-stack applications, troubleshooting technology issues, and supporting reliable IT solutions. Familiar with AI-assisted development, prompt engineering, generative AI tools, and configuring simple AI workflows. Seeking an internship opportunity to apply technical skills while continuing to grow in software, infrastructure, and emerging technologies.",
       email: "rtimals@rockets.utoledo.edu",
-      phone: "573-355-2475",
       location: "Toledo, OH",
       github: "",
       linkedin: "linkedin.com/in/ratish-timalsina",

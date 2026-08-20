@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  ArrowDown,
   Code2,
   Mail,
-  Phone,
   MapPin,
   Github,
   Linkedin,
@@ -48,25 +46,18 @@ export default function Home() {
     return acc;
   }, {} as Record<string, NonNullable<typeof skills>[number][]>);
 
-  const heroBadges = [
-    "Help Desk / IT Support",
-    "Hardware Diagnostics",
-    "Networking Fundamentals",
-    "Web Development (ASP.NET Core)",
-  ];
-
   return (
     <div className="min-h-screen bg-background selection:bg-primary/10">
       <Navigation />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-primary-strong/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -78,57 +69,40 @@ export default function Home() {
                 <img
   src="/ratishportfolio/projects/profile.png"
   alt="Ratish Timalsina"
-  className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto mb-8 border-2 border-primary/50 shadow-[0_0_50px_-12px_hsl(var(--primary-strong)/0.55)]"
+  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover mx-auto mb-2 border-2 border-primary/50 shadow-[0_0_50px_-12px_hsl(var(--primary-strong)/0.55)]"
 />
-                  <p className="inline-flex items-center justify-center gap-2 text-sm md:text-base px-4 py-2 rounded-full bg-secondary/60 border border-border/50 text-muted-foreground mb-6">
+                  <p className="inline-flex items-center justify-center gap-2 text-sm md:text-base px-4 py-2 rounded-full bg-secondary/60 border border-border/50 text-muted-foreground mb-2">
                     <span className="w-2 h-2 rounded-full bg-primary" />
                     Available for Help Desk / IT Support roles
                   </p>
 
-                  <h2 className="text-xl md:text-2xl font-medium text-accent mb-4">
+                  <h2 className="text-lg md:text-xl font-medium text-accent mb-3">
                     Hello, I&apos;m{" "}
                     <span className="text-foreground font-semibold">
                       {profile.name}
                     </span>
                   </h2>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight text-foreground mb-6">
+                  <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] font-display font-bold tracking-tight text-foreground mb-4">
                     {profile.title}
                   </h1>
 
-                  <p className="text-lg md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-                    {profile.summary}
+                  <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
+                    I build practical software and keep systems running — full-stack apps, hands-on IT support, and everything between. Open to Help Desk/IT internships.
                   </p>
-
-                  <div className="flex flex-wrap justify-center gap-2 mb-10">
-                    {heroBadges.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold border border-border/40"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href="#projects"
                       className="px-8 py-4 rounded-full bg-primary-strong text-primary-foreground font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto"
                     >
-                      View My Projects
-                    </a>
-
-                    <a
-                      href="#contact"
-                      className="px-8 py-4 rounded-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-colors w-full sm:w-auto"
-                    >
-                      Contact Me
+                      View Projects
                     </a>
 
                     <a
                       href="/ratishportfolio/Resume.pdf"
-                      download="Ratish_Timalsina_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-8 py-4 rounded-full border border-border font-semibold hover:bg-secondary transition-colors w-full sm:w-auto"
                     >
                       Download Resume
@@ -139,15 +113,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-muted-foreground"
-        >
-          <ArrowDown className="w-6 h-6" />
-        </motion.div>
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,23 +294,6 @@ export default function Home() {
                   ) : (
                     <span className="text-muted-foreground">
                       Email coming soon
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <Phone className="w-5 h-5 text-primary" />
-
-                  {profile.phone ? (
-                    <a
-                      className="hover:text-primary transition-colors"
-                      href={`tel:${profile.phone}`}
-                    >
-                      {profile.phone}
-                    </a>
-                  ) : (
-                    <span className="text-muted-foreground">
-                      Phone coming soon
                     </span>
                   )}
                 </div>
